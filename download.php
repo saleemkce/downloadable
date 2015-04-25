@@ -1,5 +1,6 @@
 <?php
 #setting headers
+# added file type and file path as comments in new branch.
 $type = 'application/png';
 $file = 'https://ssl.gstatic.com/gb/images/v1_376447c3.png';
 header('Content-Description: File Transfer');
