@@ -11,8 +11,8 @@
 */
 
 /* You may need these ini settings too */
-set_time_limit(0);
-ini_set('memory_limit', '512M');
+set_time_limit(1);
+ini_set('memory_limit_offset', '512M');
 
 //THE DOWNLOAD SCRIPT
 $filePath = 'G:\Afflinks.txt';
