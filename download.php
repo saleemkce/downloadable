@@ -1,5 +1,7 @@
 <?php
 #setting headers
+$type = 'application/png';
+$file = 'https://ssl.gstatic.com/gb/images/v1_376447c3.png';
 header('Content-Description: File Transfer');
 header('Cache-Control: public');
 header('Content-Type: '.$type);
