@@ -11,7 +11,7 @@
 */
 
 /* You may need these ini settings too */
-set_time_limit(0);
+set_time_limit(-1);
 ini_set('memory_limit', '512M');
 
 //THE DOWNLOAD SCRIPT
