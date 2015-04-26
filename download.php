@@ -20,30 +20,24 @@ $filePath = 'G:\Afflinks.txt';
 download($filePath); // calls download function
 function download( $filePath )
 {	
-	if(!empty( $filePath ))
-	{
+	if(!empty($filePath)){
 		$fileInfo = pathinfo($filePath);
 		$fileName  = $fileInfo['basename'];
 		$fileExtnesion   = $fileInfo['extension'];
 		$default_contentType = "application/octet-stream";
 		$content_types_list = mimeTypes();
 		// to find and use specific content type, check out this IANA page : http://www.iana.org/assignments/media-types/media-types.xhtml
-		if (array_key_exists($fileExtnesion, $content_types_list)) 
-		{
+		if (array_key_exists($fileExtnesion, $content_types_list)) {
 			$contentType = $content_types_list[$fileExtnesion];
-		}
-		else
-		{
+		}else{
 			$contentType =  $default_contentType;
 		}
-		if(file_exists($filePath))
-		{
+		if(file_exists($filePath)){
 			$size = filesize($filePath);
 			$offset = 0;
 			$length = $size;
 			//HEADERS FOR PARTIAL DOWNLOAD FACILITY BEGINS
-			if(isset($_SERVER['HTTP_RANGE']))
-			{
+			if(isset($_SERVER['HTTP_RANGE'])){
 				preg_match('/bytes=(\d+)-(\d+)?/', $_SERVER['HTTP_RANGE'], $matches);
 				$offset = intval($matches[1]);
 				$length = intval($matches[2]) - $offset;
@@ -64,8 +58,7 @@ function download( $filePath )
 			header("Cache-Control: public, must-revalidate, post-check=0, pre-check=0");
 			header("Content-Length: ".filesize($filePath));
 			$chunksize = 8 * (1024 * 1024); //8MB (highest possible fread length)
-			if ($size > $chunksize)
-			{
+			if ($size > $chunksize){
 			  $handle = fopen($_FILES["file"]["tmp_name"], 'rb');
 			  $buffer = '';
 			  while (!feof($handle) && (connection_status() === CONNECTION_NORMAL)) 
@@ -75,26 +68,22 @@ function download( $filePath )
 				ob_flush();
 				flush();
 			  }
-			  if(connection_status() !== CONNECTION_NORMAL)
-			  {
+			  if(connection_status() !== CONNECTION_NORMAL){
 				echo "Connection aborted";
 			  }
 			  fclose($handle);
 			}
-			else 
-			{
+			else{
 			  ob_clean();
 			  flush();
 			  readfile($filePath);
 			}
 		 }
-		 else
-		 {
+		 else{
 		   echo 'File does not exist!';
 		 }
 	}
-	else
-	{
+	else{
 		echo 'There is no file to download!';
 	}
 }	
