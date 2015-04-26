@@ -18,9 +18,9 @@ ini_set('memory_limit', '512M');
 $filePath = 'G:\Afflinks.txt';
 //$filePath = "D:/Software/versions/windows/windows_7.rar"; // set your download file path here.
 download($filePath); // calls download function
-function download($filePath)
+function download( $filePath )
 {	
-	if(!empty($filePath))
+	if(!empty( $filePath ))
 	{
 		$fileInfo = pathinfo($filePath);
 		$fileName  = $fileInfo['basename'];
@@ -101,7 +101,7 @@ function download($filePath)
 	
 
 /* Function to get correct MIME type for download */
-function mimeTypes()
+function mimeTypes( $defaultType = null )
 {
 /* Just add any required MIME type if you are going to download something not listed here.*/
 $mime_types = array("323" => "text/h323",
