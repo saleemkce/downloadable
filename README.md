@@ -1,2 +1,2 @@
 # downloadable
-a repo to describe a new downloadable script, just for fun!
+a repo to describe something about downloadable script, just for fun!
