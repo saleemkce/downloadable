@@ -92,8 +92,8 @@ function download( $filePath )
 /* Function to get correct MIME type for download */
 function mimeTypes( $defaultType = null )
 {
-/* Just add any required MIME type if you are going to download something not listed here.*/
-$mime_types = array("323" => "text/h323",
+	/* Just add any required MIME type if you are going to download something not listed here.*/
+	$mime_types = array("323" => "text/h323",
 					"acx" => "application/internet-property-stream",
 					"ai" => "application/postscript",
 					"aif" => "audio/x-aiff",
