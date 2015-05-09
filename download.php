@@ -4,6 +4,7 @@
 * @website    profile @ http://github.com/saleemkce  
 * @copyright  Free PHP script, use anywhere as you like, no attribution required, no issues though
 * @created    2014 
+* 
 * The script is capable of downloading really large files in PHP. Files greater than 2GB may fail in 32-bit windows or similar system.
 * All incorrect headers have been removed and no nonsense code remains in this script. It should work well.
 * The best and most recommended way to download files with PHP is using xsendfile, learn 
