@@ -71,7 +71,7 @@ class Download
 					flush();
 				  }
 				  if(connection_status() !== CONNECTION_NORMAL){
-					echo "Connection aborted";
+					throw new Exception("Connection aborted");
 				  }
 				  fclose($handle);
 				}
@@ -82,11 +82,11 @@ class Download
 				}
 			 }
 			 else{
-			   echo 'File does not exist!';
+			   throw new Exception('File does not exist!');
 			 }
 		}
 		else{
-			echo 'There is no file to download!';
+			throw new Exception('There is no file to download!');
 		}
 
 	}		
