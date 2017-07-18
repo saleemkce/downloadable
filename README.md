@@ -1,2 +1,7 @@
 # downloadable
-	A repo to describe something about downloadable script, just for fun!
+
+## Usage
+```
+$download = new Download();
+$download->download($zipFullPath);
+```
